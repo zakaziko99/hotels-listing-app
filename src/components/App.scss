@@ -1,0 +1,48 @@
+@import '../_variables.scss';
+
+.App {
+  text-align: center;
+  width: 100%;
+  margin: 10px auto;
+
+  .container-btn-loader {
+    padding: 0 10px 10px;
+
+    button {
+      background: $btn-color;
+      font-size: 1.25em;
+      font-weight: 600;
+      &:hover {
+        background: lighten($btn-color, 5%);
+      }
+      &.disabled {
+        background: lighten(desaturate($btn-color, 25%), 25%);
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 90%;
+    margin: 15px auto;
+
+    .container-btn-loader {
+      padding: 0 15px 15px;
+      button {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 85%;
+    max-width: 1200px;
+    margin: 20px auto;
+
+    .container-btn-loader {
+      padding: 0 20px 20px;
+      button {
+        max-width: 300px;
+      }
+    }
+  }
+}

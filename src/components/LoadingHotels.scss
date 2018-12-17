@@ -1,0 +1,112 @@
+@import '../_variables.scss';
+
+.LoadingHotels {
+  width: calc(100% - 20px);
+  text-align: left;
+  margin: 0 auto 20px;
+  padding: 0 10px 10px;
+  background: $white-color;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba($black-color, .3);
+  &Image {
+    position: relative;
+    margin: 0 -10px 15px;
+		padding-top: 75%;	 // 100% * 3/4
+		display: block;
+    overflow: hidden;
+    background: #666;
+		.img-anim {
+      position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+      bottom: 0;
+      border-radius: 0;
+    }
+    @media (min-width: $tablet-width) {
+      margin: 0 -15px 20px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 40%;
+      padding-top: 30%;
+      margin: 0;
+    }
+  }
+  &Infos {
+    position: relative;
+    box-sizing: border-box;
+    .h1-anim {
+      margin: 0 0 10px;
+      padding-top: 5px;
+      width: 100%;
+      height: 20px;
+    }
+    .h3-anim {
+      margin: 0 0 65px;
+      width: 65%;
+      height: 16px;
+      @media (min-width: $tablet-width) {
+        margin-bottom: 80px;
+      }
+      @media (min-width: $desktop-width) {
+        margin-bottom: 20px;
+      }
+    }
+    .p-anim {
+      width: 90%;
+      .anim-loading {
+        height: 15px;
+        margin-bottom: 3px;
+      }
+    }
+    .btn-anim {
+      margin-bottom: 0;
+      height: 35px;
+      @media (min-width: $tablet-width) {
+        width: 60%;
+      }
+      @media (min-width: $tablet-width) {
+        width: 50%;
+        max-width: 300px;
+        margin: 20px 0;
+      }
+    }
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: calc(60% - 20px);
+      padding: 20px 10px;
+    }
+  }
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+    padding: 0 15px 15px;
+  }
+  @media (min-width: $desktop-width) {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0;
+  }
+}
+
+.anim-loading {
+  animation: 1s forwards infinite animLoading linear;
+  background: #f6f7f8;
+  background-image: -webkit-gradient(linear, left center, right center, from(#f6f7f8), color-stop(.2, #edeef1), color-stop(.4, #f6f7f8), to(#f6f7f8));
+  background-image: -webkit-linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 1000px;
+  position: relative;
+  border-radius: 8px;
+}
+
+@keyframes animLoading {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+

@@ -1,0 +1,162 @@
+@import '../_variables.scss';
+
+.Hotel {
+  width: calc(100% - 20px);
+  text-align: left;
+  margin: 0 auto 20px;
+  padding: 0 10px 10px;
+  background: $white-color;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba($black-color, .3);
+  &Image {
+    position: relative;
+    margin: 0 -10px 15px;
+		padding-top: 75%;	 // 100% * 3/4
+		display: block;
+    overflow: hidden;
+    background: #666;
+		img {
+      position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			object-fit: cover;
+			width: 100%;
+      height: 100%;
+      max-width: 100%;
+      border: 0;
+      vertical-align: middle;
+    }
+    @media (min-width: $tablet-width) {
+      margin: 0 -15px 20px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 40%;
+      padding-top: 30%;
+      margin: 0;
+    }
+  }
+  &Infos {
+    position: relative;
+    box-sizing: border-box;
+    h1 {
+      margin: 0 0 3px;
+      padding-top: 5px;
+      font-size: 1.675em;
+      border-bottom: 2px solid $primary-color;
+      font-weight: 500;
+      text-transform: uppercase;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      @media (min-width: $desktop-width) {
+        font-size: 1.375em;
+      }
+    }
+    h3{
+      margin: 0 0 65px;
+      font-size: 1em;
+      font-weight: 400;
+      width: 65%;
+      @media (min-width: $tablet-width) {
+        margin-bottom: 80px;
+      }
+      @media (min-width: $desktop-width) {
+        white-space: nowrap;
+        margin-bottom: 20px;
+        font-size: 0.875em;
+      }
+    }
+    p {
+      line-height: 1.2;
+      @media (min-width: $desktop-width) {
+        font-size: 0.875em;
+        max-height: 4.8em;
+        min-height: 3.6em;
+        overflow: hidden;
+      }
+    }
+    .load-reviews-btn {
+      margin-bottom: 0;
+      @media (min-width: $tablet-width) {
+        width: 60%;
+        font-size: 1em;
+      }
+      @media (min-width: $desktop-width) {
+        width: 50%;
+        max-width: 300px;
+        margin: 20px 0;
+      }
+    }
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: calc(60% - 20px);
+      padding: 20px 10px;
+    }
+  }
+  &Rating {
+    position: absolute;
+    right: 0;
+    top: -13px;
+    color: $star-off-color;
+    &Value {
+      color: $star-on-color;
+    }
+    @media (min-width: $tablet-width) {
+      top: -17px;
+    }
+    @media (min-width: $desktop-width) {
+      right: 10px;
+      top: 5px;
+    }
+  }
+  &Price {
+    position: absolute;
+    right: 0;
+    top: 68px;
+    font-size: 2.5em;
+    color: darken($primary-color, 10%);
+    text-align: right;
+    line-height: 0.5;
+    span {
+      display: block;
+      font-weight: 500;
+    }
+    small {
+      font-size: 0.375em;
+      color: lighten($black-color, 25%);
+    }
+    @media (min-width: $tablet-width) {
+      top: 100px;
+      font-size: 2em;
+    }
+    @media (min-width: $desktop-width) {
+      top: auto;
+      right: 10px;
+      bottom: calc(55px - 1vmin);
+      font-size: 2.25em;
+    }
+  }
+  .container-reviews {
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    &.open {
+      max-height: 2000px;
+    }
+  }
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+    padding: 0 15px 15px;
+  }
+  @media (min-width: $desktop-width) {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0;
+    font-size: 0.75em;
+  }
+}

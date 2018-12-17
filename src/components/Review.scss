@@ -1,0 +1,59 @@
+@import '../_variables.scss';
+$positive: darken(#00AE68, 10%);
+$negative: #AE0038;
+
+.Review {
+  position: relative;
+  background: darken($white-color, 5%);
+  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  span {
+    position: absolute;
+    display: inline-block;
+    font-size: 2em;
+    top: 10px;
+    right: 10px;
+    color: $negative;
+    &.positive {
+      color: $positive;
+    }
+    @media (min-width: $tablet-width) {
+      font-size: 1.875em;
+      top: 6px;
+      right: 20px;
+    }
+    @media (min-width: $desktop-width) {
+      font-size: 2.25em;
+      top: 20px;
+      right: auto;
+      left: 20px;
+    }
+  }
+  h2 {
+    font-size: 1.25em;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid darken($white-color, 20%);
+    @media (min-width: $tablet-width) {
+      font-size: 1em;
+    }
+  }
+  p {
+    margin: 0 0 10px;
+    @media (min-width: $tablet-width) {
+      font-size: 0.75em;
+    }
+  }
+  @media (min-width: $tablet-width) {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 15px;
+  }
+  @media (min-width: $desktop-width) {
+    margin: 30px 20px;
+    padding: 10px 20px 10px 80px;
+    border-radius: 20px;
+  }
+}
